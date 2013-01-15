@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  property: 
+  item_name: MyString
+
+two:
+  property: 
+  item_name: MyString

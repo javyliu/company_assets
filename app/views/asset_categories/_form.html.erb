@@ -1,0 +1,27 @@
+<%= form_for(@asset_category) do |f| %>
+  <% if @asset_category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @asset_category.errors.count %> 个错误:</h2> 
+      <ul>
+      <% @asset_category.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+    <div class="field">
+      类别属性<br />
+      <% @properties.each do |item| %>
+        <%= check_box_tag "category_property_ids[]",item.id,@asset_category.new_record? ? false : @ids.include?(item.id),:id => item.id  %>
+        <%= label_tag item.id,item.name  %>
+    <% end %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

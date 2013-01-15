@@ -1,0 +1,23 @@
+<%= form_for(@asset_category) do |f| %>
+  <% if @asset_category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @category_property.errors.count %> 个错误:</h2>
+
+      <ul>
+      <% @category_property.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    类别属性<br />
+    <% Property.all -  %>
+    <%= f.check_box :property_ids,options_from_collection_for_select(Property.all,:id,:name) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+ <%= link_to "添加选项", new_property_path %>

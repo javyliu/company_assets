@@ -1,0 +1,28 @@
+<h1>资产类别</h1>
+
+<table>
+  <tr>
+    <th><%= AssetCategory.human_attribute_name(:name) %></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <td rowspan=<%= @asset_categories.length+1 %> width="50%" style="vertical-align:top">
+      <div class="pt40"></div>
+      <div id="platform"></div>
+    </td>
+  </tr>
+
+<% @asset_categories.each do |asset_category| %>
+  <tr>
+    <td><%= asset_category.name %></td>
+    <td><%= link_to 'Edit', edit_asset_category_path(asset_category) %></td>
+    <td><%= link_to '属性', category_properties_path(:asset_category_id => asset_category.id),:remote => true %></td>
+    <td><%= link_to 'Destroy', asset_category, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Asset category', new_asset_category_path %>

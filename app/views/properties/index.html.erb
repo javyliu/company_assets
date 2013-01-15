@@ -1,0 +1,26 @@
+<h1>资产属性列表</h1>
+
+<table>
+  <tr>
+    <th><%= Property.human_attribute_name(:name) %></th>
+    <th><%= Property.human_attribute_name(:style) %></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @properties.each do |property| %>
+  <tr>
+    <td><%= property.name %></td>
+    <td><%= Property::Style.rassoc(property.style).first %></td>
+    <td><%= link_to 'Show', property %></td>
+    <td><%= link_to 'Edit', edit_property_path(property) %></td>
+    <td><%= link_to 'Destroy', property, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+    <td><%= link_to '管理选项', check_options_path(:property_id => property) if property.style == 1 %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Property', new_property_path %>

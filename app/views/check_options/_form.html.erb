@@ -1,0 +1,21 @@
+<%= form_for(@check_option) do |f| %>
+  <% if @check_option.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @check_option.errors.count %> 个错误:</h2>
+
+      <ul>
+      <% @check_option.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %> 
+  <div class="field">
+    <%= f.hidden_field :property_id %>
+    <%= f.label :item_name %><br />
+    <%= f.text_field :item_name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

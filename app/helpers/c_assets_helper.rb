@@ -1,0 +1,2 @@
+module CAssetsHelper
+end

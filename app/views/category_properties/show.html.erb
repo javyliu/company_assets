@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Asset category:</b>
+  <%= @category_property.asset_category %>
+</p>
+
+<p>
+  <b>Property:</b>
+  <%= @category_property.property %>
+</p>
+
+
+<%= link_to 'Edit', edit_category_property_path(@category_property) %> |
+<%= link_to 'Back', category_properties_path %>

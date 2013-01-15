@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Bianhao:</b>
+  <%= @c_asset.bianhao %>
+</p>
+
+<p>
+  <b>Asset category:</b>
+  <%= @c_asset.asset_category_id %>
+</p>
+
+<p>
+  <b>Last update user:</b>
+  <%= @c_asset.last_update_user %>
+</p>
+
+
+<%= link_to 'Edit', edit_c_asset_path(@c_asset) %> |
+<%= link_to 'Back', c_assets_path %>

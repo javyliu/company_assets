@@ -1,0 +1,27 @@
+<h1>Listing c_assets</h1>
+
+<table>
+  <tr>
+    <th>Bianhao</th>
+    <th>Asset category</th>
+    <th>Last update user</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @c_assets.each do |c_asset| %>
+  <tr>
+    <td><%= c_asset.bianhao %></td>
+    <td><%= c_asset.asset_category_id %></td>
+    <td><%= c_asset.last_update_user %></td>
+    <td><%= link_to 'Show', c_asset %></td>
+    <td><%= link_to 'Edit', edit_c_asset_path(c_asset) %></td>
+    <td><%= link_to 'Destroy', c_asset, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New C asset', new_c_asset_path %>

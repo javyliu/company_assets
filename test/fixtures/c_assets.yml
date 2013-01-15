@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  bianhao: MyString
+  asset_category_id: 1
+  last_update_user: MyString
+
+two:
+  bianhao: MyString
+  asset_category_id: 1
+  last_update_user: MyString

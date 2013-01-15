@@ -1,0 +1,15 @@
+<table>
+  <tr>
+    <th>属性</th>
+  </tr>
+
+<% list.each do |category_property| %>
+  <tr>
+    <td><%= category_property.property.name %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '编辑属性', edit_asset_category_path(params[:asset_category_id]) %>

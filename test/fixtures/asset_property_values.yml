@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  property: 
+  c_asset: 
+  str_value: MyString
+  int_value: MyString
+
+two:
+  property: 
+  c_asset: 
+  str_value: MyString
+  int_value: MyString

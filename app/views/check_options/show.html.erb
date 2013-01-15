@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Property:</b>
+  <%= @check_option.property %>
+</p>
+
+<p>
+  <b>Item name:</b>
+  <%= @check_option.item_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_check_option_path(@check_option) %> |
+<%= link_to 'Back', check_options_path %>
