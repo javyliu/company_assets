@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  contract_no: MyString
+  kefu_tel: MyString
+  other_contact: MyString
+  ems_address: MyString
+  map: MyString
+  device_no: MyString
+  space: MyString
+  bandwidth: MyString
+  port_num: MyString
+  ip: MyString
+  exchange_device: MyString
+  fee: MyString
+  remark: MyString
+
+two:
+  name: MyString
+  contract_no: MyString
+  kefu_tel: MyString
+  other_contact: MyString
+  ems_address: MyString
+  map: MyString
+  device_no: MyString
+  space: MyString
+  bandwidth: MyString
+  port_num: MyString
+  ip: MyString
+  exchange_device: MyString
+  fee: MyString
+  remark: MyString

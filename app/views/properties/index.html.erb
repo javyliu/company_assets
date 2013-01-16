@@ -13,7 +13,6 @@
   <tr>
     <td><%= property.name %></td>
     <td><%= Property::Style.rassoc(property.style).first %></td>
-    <td><%= link_to 'Show', property %></td>
     <td><%= link_to 'Edit', edit_property_path(property) %></td>
     <td><%= link_to 'Destroy', property, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
     <td><%= link_to '管理选项', check_options_path(:property_id => property) if property.style == 1 %></td>

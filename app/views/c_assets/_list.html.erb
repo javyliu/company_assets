@@ -1,0 +1,27 @@
+<table>
+  <tr>
+    <th><%= CAsset.human_attribute_name(:bianhao) %></th>
+    <% @properties.each do |item| %>
+      <th><%= item.name %></th> 
+    <% end %>
+    <th><%= CAsset.human_attribute_name(:updated_at) %></th>
+    <th><%= CAsset.human_attribute_name(:last_update_user) %></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr> 
+<% @c_assets.each do |c_asset| %>
+  <tr>
+    <td><%= c_asset.bianhao %></td>
+    <% @properties.each do |item| %>
+      <td><%=get_value(c_asset.asset_property_values.detect{|em| em.property_id == item.id },item) %></td> 
+    <% end %> 
+    <td><%= c_asset.updated_at.strftime("%F") %></td>
+    <td><%= c_asset.last_update_user %></td>
+    <td><%= link_to 'Show', c_asset %></td>
+    <td><%= link_to 'Edit', edit_c_asset_path(c_asset) %></td>
+    <td><%= link_to 'Destroy', c_asset, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+<%= will_paginate(@c_assets) %>

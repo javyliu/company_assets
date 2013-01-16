@@ -1,0 +1,11 @@
+<%= fb.hidden_field :property_id %>
+<div><%= fb.label :property_name,fb.object.property_name %><br/>
+	<% if fb.object.is_radio? %>
+		<% fb.object.check_options.each do |item| %>
+			<%= fb.radio_button :int_value,item.id %>
+			<%= fb.label "int_value_#{item.id}",item.item_name %> 
+		<% end %>
+	<% else %>
+		<%= fb.text_field :str_value %>
+	<% end %> 
+</div>

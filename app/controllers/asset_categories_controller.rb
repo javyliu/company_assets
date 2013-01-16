@@ -49,7 +49,7 @@ class AssetCategoriesController < ApplicationController
 
     respond_to do |format|
       if @asset_category.save
-        if params[:category_property_ids].length > 0 
+        if params[:category_property_ids] && params[:category_property_ids].length > 0 
           params[:category_property_ids].each do |item|
             @asset_category.category_properties << CategoryProperty.new(:property_id => item) 
           end

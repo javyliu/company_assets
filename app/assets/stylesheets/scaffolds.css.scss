@@ -67,3 +67,12 @@ div {
     list-style: square;
   }
 }
+table{
+  width:100%;
+  border-collapse:collapse;
+  border:solid 2px #ccc;
+  td{border:solid 1px #eee;}
+  th{border:solid 1px #ccc;}
+  td,th{text-align:center;padding:3px;}
+
+}

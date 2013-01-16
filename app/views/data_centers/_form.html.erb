@@ -1,0 +1,73 @@
+<%= form_for(@data_center) do |f| %>
+  <% if @data_center.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @data_center.errors.count %> 错误:</h2>
+
+      <ul>
+      <% @data_center.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :contract_no %><br />
+    <%= f.text_area :contract_no %>
+  </div>
+  <div class="field">
+    <%= f.label :kefu_tel %><br />
+    <%= f.text_area :kefu_tel %>
+  </div>
+  <div class="field">
+    <%= f.label :other_contact %><br />
+    <%= f.text_area :other_contact %>
+  </div>
+  <div class="field">
+    <%= f.label :ems_address %><br />
+    <%= f.text_area :ems_address %>
+  </div>
+  <div class="field">
+    <%= f.label :map %><br />
+    <%= f.text_area :map %>
+  </div>
+  <div class="field">
+    <%= f.label :device_no %><br />
+    <%= f.text_field :device_no %>
+  </div>
+  <div class="field">
+    <%= f.label :space %><br />
+    <%= f.text_field :space %>
+  </div>
+  <div class="field">
+    <%= f.label :bandwidth %><br />
+    <%= f.text_field :bandwidth %>
+  </div>
+  <div class="field">
+    <%= f.label :port_num %><br />
+    <%= f.text_field :port_num %>
+  </div>
+  <div class="field">
+    <%= f.label :ip %><br />
+    <%= f.text_field :ip %>
+  </div>
+  <div class="field">
+    <%= f.label :exchange_device %><br />
+    <%= f.text_field :exchange_device %>
+  </div>
+  <div class="field">
+    <%= f.label :fee %><br />
+    <%= f.text_field :fee %>
+  </div>
+  <div class="field">
+    <%= f.label :remark %><br />
+    <%= f.text_area :remark %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -24,6 +24,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'devise'
+gem 'cancan'
 
 group :development do
 #	gem "execjs","1.2.12"

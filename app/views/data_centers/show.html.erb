@@ -1,0 +1,75 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+    <b><%= DataCenter.human_attribute_name(:name) %></b>
+  <%= @data_center.name %>
+</p>
+
+<p>
+    <b><%= DataCenter.human_attribute_name(:contract_no) %></b>
+  <%= @data_center.contract_no %>
+</p>
+
+<p>
+    <b><%= DataCenter.human_attribute_name(:kefu_tel) %></b>
+  <%= @data_center.kefu_tel %>
+</p>
+
+<p>
+    <b><%= DataCenter.human_attribute_name(:other_contact) %></b>
+  <%= @data_center.other_contact %>
+</p>
+
+<p>
+    <b><%= DataCenter.human_attribute_name(:ems_address) %></b>
+  <%= @data_center.ems_address %>
+</p>
+
+<p>
+    <b><%= DataCenter.human_attribute_name(:map) %></b>
+  <%= @data_center.map %>
+</p>
+
+<p>
+    <b><%= DataCenter.human_attribute_name(:device_no) %></b>
+  <%= @data_center.device_no %>
+</p>
+
+<p>
+    <b><%= DataCenter.human_attribute_name(:space) %></b>
+  <%= @data_center.space %>
+</p>
+
+<p>
+    <b><%= DataCenter.human_attribute_name(:bandwidth) %></b>
+  <%= @data_center.bandwidth %>
+</p>
+
+<p>
+    <b><%= DataCenter.human_attribute_name(:port_num) %></b>
+  <%= @data_center.port_num %>
+</p>
+
+<p>
+    <b><%= DataCenter.human_attribute_name(:ip) %></b>
+  <%= @data_center.ip %>
+</p>
+
+<p>
+    <b><%= DataCenter.human_attribute_name(:exchange_devic3) %></b>
+  <%= @data_center.exchange_device %>
+</p>
+
+<p>
+    <%= DataCenter.human_attribute_name(:fee) %>
+  <%= @data_center.fee %>
+</p>
+
+<p>
+    <%= DataCenter.human_attribute_name(:remark) %>
+  <%= @data_center.remark %>
+</p>
+
+
+<%= link_to 'Edit', edit_data_center_path(@data_center) %> |
+<%= link_to 'Back', data_centers_path %>

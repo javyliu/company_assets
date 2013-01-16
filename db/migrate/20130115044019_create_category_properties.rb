@@ -1,6 +1,6 @@
 class CreateCategoryProperties < ActiveRecord::Migration
   def change
-    create_table :category_properties do |t|
+    create_table :category_properties,:force => true do |t|
       t.references :asset_category
       t.references :property
     end

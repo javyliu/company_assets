@@ -1,0 +1,49 @@
+<h1>机房列表</h1>
+
+<table>
+  <tr>
+    <th><%= DataCenter.human_attribute_name(:name) %></th>
+    <th><%= DataCenter.human_attribute_name(:contract_no) %></th>
+    <th><%= DataCenter.human_attribute_name(:kefu_tel) %></th>
+    <th><%= DataCenter.human_attribute_name(:other_contact) %></th>
+    <th><%= DataCenter.human_attribute_name(:ems_address) %></th>
+    <th><%= DataCenter.human_attribute_name(:map) %></th>
+    <th><%= DataCenter.human_attribute_name(:device_no) %></th>
+    <th><%= DataCenter.human_attribute_name(:space) %></th>
+    <th><%= DataCenter.human_attribute_name(:bandwidth) %></th>
+    <th><%= DataCenter.human_attribute_name(:port_num) %></th>
+    <th><%= DataCenter.human_attribute_name(:ip) %></th>
+    <th><%= DataCenter.human_attribute_name(:exchange_devic3) %></th>
+    <th><%= DataCenter.human_attribute_name(:fee) %></th>
+    <th><%= DataCenter.human_attribute_name(:remark) %></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @data_centers.each do |data_center| %>
+  <tr>
+    <td><%= data_center.name %></td>
+    <td><%= data_center.contract_no %></td>
+    <td><%= data_center.kefu_tel %></td>
+    <td><%= data_center.other_contact %></td>
+    <td><%= data_center.ems_address %></td>
+    <td><%= data_center.map %></td>
+    <td><%= data_center.device_no %></td>
+    <td><%= data_center.space %></td>
+    <td><%= data_center.bandwidth %></td>
+    <td><%= data_center.port_num %></td>
+    <td><%= data_center.ip %></td>
+    <td><%= data_center.exchange_device %></td>
+    <td><%= data_center.fee %></td>
+    <td><%= data_center.remark %></td>
+    <td><%= link_to 'Show', data_center %></td>
+    <td><%= link_to 'Edit', edit_data_center_path(data_center) %></td>
+    <td><%= link_to 'Destroy', data_center, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '新建机房信息', new_data_center_path %>

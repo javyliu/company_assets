@@ -1,7 +1,7 @@
 <%= form_for(@c_asset) do |f| %>
   <% if @c_asset.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@c_asset.errors.count, "error") %> prohibited this c_asset from being saved:</h2>
+      <h2><%= @c_asset.errors.count %> 个错误:</h2>
 
       <ul>
       <% @c_asset.errors.full_messages.each do |msg| %>
@@ -12,16 +12,19 @@
   <% end %>
 
   <div class="field">
+  <% if @c_asset.new_record? %>
+    <%= f.label :asset_category_id %><br />
+    <%= f.select :asset_category_id,options_from_collection_for_select(@asset_categories,:id,:name,@c_asset.asset_category_id),{},:onchange => "location.href='?asset_category_id='+this.value" %>
+  <% end %>
+  </div>
+  <div class="field">
     <%= f.label :bianhao %><br />
     <%= f.text_field :bianhao %>
   </div>
-  <div class="field">
-    <%= f.label :asset_category_id %><br />
-    <%= f.number_field :asset_category_id %>
-  </div>
-  <div class="field">
-    <%= f.label :last_update_user %><br />
-    <%= f.text_field :last_update_user %>
+  <div id="asset_property">
+	  <%= f.fields_for :asset_property_values do |builder| %>
+        <%= render :partial => "asset_property_fields",:locals => {:fb => builder} %>
+	  <% end %> 
   </div>
   <div class="actions">
     <%= f.submit %>

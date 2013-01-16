@@ -202,6 +202,8 @@ zh-CN:
       asset_category: "资产类别"
       property: "资产属性"
       check_option: "选项列表"
+      c_asset: "资产"
+      data_center: "机房"
     attributes:
       user:
         username: '用户名'
@@ -218,6 +220,26 @@ zh-CN:
         style: "属性类型"
       check_option:
         item_name: "选项名称" 
+      c_asset:
+        bianhao: "资产编号" 
+        asset_category_id: "资产类别" 
+        last_update_user: "最后编辑人" 
+        updated_at: "更新时间" 
+      data_center:
+        name: "机房"
+        contract_no: "合同号"
+        kefu_tel: "客服联络电话"
+        other_contact: "其他联系人"
+        ems_address: "机房快递地址"
+        map: "行车路线"
+        device_no: "设备位置及编号"
+        space: "空间"
+        bandwidth: "带宽"
+        port_num: "端口"
+        ip: "IP"
+        exchange_device: "上联交换机"
+        fee: "费用"
+        remark: "备注" 
     errors:
       full_messages:
         format: "%{attribute} %{message}"

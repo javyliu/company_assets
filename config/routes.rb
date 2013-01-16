@@ -1,4 +1,9 @@
 CompanyAssets::Application.routes.draw do
+  devise_for :users
+
+  resources :data_centers
+
+
   resources :category_properties
 
 
