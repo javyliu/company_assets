@@ -57,6 +57,8 @@ class AssetCategoriesController < ApplicationController
         format.html { redirect_to asset_categories_path, :notice => 'Asset category was successfully created.' }
         format.json { render :json => @asset_category, :status => :created, :location => @asset_category }
       else
+        @properties = Property.all
+        @ids = []
         format.html { render :action => "new" }
         format.json { render :json => @asset_category.errors, :status => :unprocessable_entity }
       end

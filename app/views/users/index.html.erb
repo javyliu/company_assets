@@ -1,0 +1,30 @@
+<h1>用户列表</h1>
+
+<table>
+  <tr>
+    <th><%= User.human_attribute_name(:email) %></th>
+    <th><%= User.human_attribute_name(:sign_in_count) %></th>
+    <th><%= User.human_attribute_name(:last_sign_in_at) %></th>
+    <th><%= User.human_attribute_name(:last_sign_in_ip) %></th>
+    <th><%= User.human_attribute_name(:created_at) %></th>
+    <th><%= User.human_attribute_name(:roles_mask) %></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.email %></td>
+    <td><%= user.sign_in_count %></td>
+    <td><%= user.last_sign_in_at.strftime("%F") %></td>
+    <td><%= user.last_sign_in_ip %></td>
+    <td><%= user.created_at.strftime("%F") %></td>
+    <td><%= user.role_symbols %></td>
+    <td><%= link_to '分配角色', edit_user_path(user) %></td>
+    <td><%= link_to '删除用户', user, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

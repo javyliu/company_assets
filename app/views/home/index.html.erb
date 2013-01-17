@@ -104,26 +104,42 @@ function f_addTab(tabid,text, url)
 			  <div title="资产管理" class="l-scroll">
 				  <div style=" height:7px;"></div>
 				  <ul id="tree1" style="margin-top:3px;">
-					  <li isexpand="false"><span>资产类别属性</span>
-					  <ul>
-						  <li url="/properties"><span>属性列表</span></li>
-						  <li url="/properties/new"><span>添加资产类别属性</span></li>
-					  </ul></li>
-					  <li isexpand="false"><span>资产类别</span>
-					  <ul>
-						  <li url="/asset_categories"><span>资产类别</span></li>
-						  <li url="/asset_categories/new"><span>添加资产类别</span></li>
-					  </ul></li>
-					  <li isexpand="false"><span>资产管理</span>
-					  <ul>
-						  <li url="/c_assets"><span>资产列表</span></li>
-						  <li url="/c_assets/new"><span>添加资产</span></li>
-					  </ul></li>
-					  <li isexpand="false"><span>机房管理</span>
-					  <ul>
-						  <li url="/data_centers"><span>机房列表</span></li>
-						  <li url="/data_centers/new"><span>添加机房</span></li>
-					  </ul></li>
+					  <% if can? :manage,Property %>
+						  <li isexpand="false"><span>资产类别属性</span>
+						  <ul>
+							  <li url="/properties"><span>属性列表</span></li>
+							  <li url="/properties/new"><span>添加资产类别属性</span></li>
+						  </ul></li>
+					  <% end %>
+					  <% if can? :manage,AssetCategory %>
+						  <li isexpand="false"><span>资产类别</span>
+						  <ul>
+							  <li url="/asset_categories"><span>资产类别</span></li>
+							  <li url="/asset_categories/new"><span>添加资产类别</span></li>
+						  </ul></li>
+					  <% end %>
+					  <% if can? :read,CAsset %>
+						  <li isexpand="false"><span>资产管理</span>
+						  <ul>
+							  <li url="/c_assets"><span>资产列表</span></li>
+                              <% if can? :manage,CAsset %>
+							  <li url="/c_assets/new"><span>添加资产</span></li>
+                            <% end %>
+						  </ul></li>
+					  <% end %>
+					  <% if can? :manage,DataCenter %>
+						  <li isexpand="false"><span>机房管理</span>
+						  <ul>
+							  <li url="/data_centers"><span>机房列表</span></li>
+							  <li url="/data_centers/new"><span>添加机房</span></li>
+						  </ul></li>
+					  <% end %>
+					  <% if can? :manage,User %>
+						  <li isexpand="false"><span>用户管理</span>
+						  <ul>
+							  <li url="/users"><span>用户列表</span></li>
+						  </ul></li>
+					  <% end %>
 				  </ul>
 			  </div>
 

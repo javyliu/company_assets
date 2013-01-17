@@ -6,8 +6,7 @@ class CAssetsController < ApplicationController
       @asset_category = params[:asset_category_id].present? ? @asset_categories.detect{|item| item.id == params[:asset_category_id].to_i} : @asset_categories.first
       redirect_to asset_categories_path,:notice => "请先添加产品类别" and return if @asset_categories.blank?
       @c_assets = CAsset.where(:asset_category_id => @asset_category.id).paginate(:page => params[:page],:per_page => 1).includes(:asset_property_values=>:option)
-      @properties = @asset_category.properties
-
+      @properties = @asset_category.properties 
     respond_to do |format|
       format.html # index.html.erb
       format.js
@@ -32,6 +31,7 @@ class CAssetsController < ApplicationController
     @asset_categories = AssetCategory.order
     @c_asset = CAsset.new(:asset_category_id => params[:asset_category_id] || @asset_categories.first.id) 
 
+    authorize! :new, @c_asset
     properties = @c_asset.asset_category.properties.includes(:check_options)
     properties.each do |item|
       @c_asset.asset_property_values.build(:property_id => item.id,:check_options => item.check_options,:property_name => item.name,:is_radio => item.style )
@@ -47,6 +47,7 @@ class CAssetsController < ApplicationController
   # GET /c_assets/1/edit
   def edit
     @c_asset = CAsset.find(params[:id])
+    authorize! :edit, @c_asset
     properties = @c_asset.asset_category.properties.includes(:check_options)
     property_ids = properties.map{|item| item.id}
     @asset_property_values = @c_asset.asset_property_values
@@ -75,6 +76,7 @@ class CAssetsController < ApplicationController
   def create
     @c_asset = CAsset.new(params[:c_asset])
 
+    authorize! :create, @c_asset
     respond_to do |format|
       if @c_asset.save
         format.html { redirect_to c_assets_path, :notice => 'C asset was successfully created.' }
@@ -91,6 +93,7 @@ class CAssetsController < ApplicationController
   def update
     @c_asset = CAsset.find(params[:id])
 
+    authorize! :update, @c_asset
     respond_to do |format|
       if @c_asset.update_attributes(params[:c_asset])
         format.html { redirect_to c_assets_path, :notice => 'C asset was successfully updated.' }
@@ -106,6 +109,7 @@ class CAssetsController < ApplicationController
   # DELETE /c_assets/1.json
   def destroy
     @c_asset = CAsset.find(params[:id])
+    authorize! :destroy, @c_asset
     @c_asset.destroy
 
     respond_to do |format|

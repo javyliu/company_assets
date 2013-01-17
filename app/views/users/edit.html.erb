@@ -1,0 +1,32 @@
+<h1>用户角色分配</h1>
+
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @user.errors.count %> 错误:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+	<%= @user.email %>
+  </div>
+  <div class="field">
+     用户角色<br />
+	<% for role in User.valid_roles %>
+		  <%= radio_button_tag "user[roles]", role, @user.is?(role),{:name => "user[roles][]"}%>
+		  <%= label_tag "user_roles_#{role}", role.to_s.humanize %><br />
+	<% end %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', users_path %>

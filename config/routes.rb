@@ -1,5 +1,8 @@
 CompanyAssets::Application.routes.draw do
-  devise_for :users
+
+  devise_for :users,:path => "account"
+
+  resources :users
 
   resources :data_centers
 
