@@ -16,9 +16,9 @@ development: &_config
   database: company_assets
   host: localhost
   pool: 5
-  username: websg
-  password: websg100919
-  socket: /data1/mysql5/data/mysql.sock
+  username: username
+  password: password
+  socket: /data/mysql.sock
   port: 3306
 
 # Warning: The database defined as "test" will be erased and
