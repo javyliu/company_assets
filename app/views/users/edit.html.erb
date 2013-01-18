@@ -20,7 +20,7 @@
   <div class="field">
      用户角色<br />
 	<% for role in User.valid_roles %>
-		  <%= radio_button_tag "user[roles]", role, @user.is?(role),{:name => "user[roles][]"}%>
+		  <%= check_box_tag "user[roles]", role, @user.is?(role),{:name => "user[roles][]"}%>
 		  <%= label_tag "user_roles_#{role}", role.to_s.humanize %><br />
 	<% end %>
   </div>
