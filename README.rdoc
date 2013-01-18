@@ -1,30 +1,31 @@
 For manage  the company assets 
 
 1.安装ruby
-	curl -L https://get.rvm.io | bash -s stable --ruby=ree
+  curl -L https://get.rvm.io | bash -s stable --ruby=ree
  
 如curl 访问 https 路径有问题执行如下命令
-	curl http://curl.haxx.se/ca/cacert.pem -o ~/ca-bundle.crt 
-	export  CURL_CA_BUNDLE=~/ca-bundle.crt 
+  curl http://curl.haxx.se/ca/cacert.pem -o ~/ca-bundle.crt 
+  export  CURL_CA_BUNDLE=~/ca-bundle.crt 
  
 2.安装gem包
-	source ~./bashrc
-	rvm --create use ree@rails3_2  
-	gem install bundler
+  source ~./bashrc
+  rvm --create use ree@rails3_2  
+  gem install bundler
  
 3.copy 项目company_assets
-	cd company_assets
-	bundle install
+  cd company_assets
+  bundle install
  
 4.更改数据库配置文件
-    vim config/database.yml 更改为当前配置
+  vim config/database.yml 更改为当前配置
 更改完成后执行：
-	rake db:migrate
-	rake db:seed （设置管理员用户为 admin@admin.com 密码为：12345678）
-	rake assets:precompile  (预编译项目)
+  rake db:migrate
+  rake db:seed （设置管理员用户为 admin@admin.com 密码为：12345678）
+  rake assets:precompile  (预编译项目)
  
 4.启动：
-	passenger start -p3001 -d -e production(3001为端口号)
-  停止：
-	passenger stop -p3001
+  passenger start -p3001 -d -e production(3001为端口号)
+
+5.停止：
+  passenger stop -p3001
 
