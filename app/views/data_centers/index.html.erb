@@ -37,9 +37,10 @@
     <td><%= data_center.exchange_device %></td>
     <td><%= data_center.fee %></td>
     <td><%= data_center.remark %></td>
-    <td><%= link_to 'Show', data_center %></td>
-    <td><%= link_to 'Edit', edit_data_center_path(data_center) %></td>
-    <td><%= link_to 'Destroy', data_center, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+<td>
+    <%= link_to 'Show', data_center %>
+    <%= link_to 'Edit', edit_data_center_path(data_center) %>
+    <%= link_to 'Destroy', data_center, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

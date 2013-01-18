@@ -71,8 +71,8 @@ table{
   width:100%;
   border-collapse:collapse;
   border:solid 2px #ccc;
-  td{border:solid 1px #eee;}
+  td{border:solid 1px #eee;vertical-align:top;text-align:left;padding:3px;}
   th{border:solid 1px #ccc;}
-  td,th{text-align:center;padding:3px;}
+  th{text-align:center;padding:3px;}
 
 }
