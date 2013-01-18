@@ -30,7 +30,7 @@ gem 'role_model'
 
 group :development do
 #	gem "execjs","1.2.12"
-#	gem 'therubyracer'
+	gem 'therubyracer'
 	gem 'pry-rails'
 	gem "nifty-generators"
 #	gem 'ffi','1.0.11'
