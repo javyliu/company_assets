@@ -95,7 +95,7 @@ class CAssetsController < ApplicationController
 
     authorize! :update, @c_asset
     respond_to do |format|
-      if @c_asset.update_attributes(params[:c_asset])
+      if @c_asset.update_attributes(params[:c_asset].merge(:last_update_user => current_user.email))
         format.html { redirect_to c_assets_path, :notice => 'C asset was successfully updated.' }
         format.json { head :no_content }
       else

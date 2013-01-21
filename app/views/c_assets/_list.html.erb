@@ -1,8 +1,8 @@
-<table>
+<table class="t_auto">
   <tr>
-    <th><%= CAsset.human_attribute_name(:bianhao) %></th>
+    <th><div style="width:80px"><%= CAsset.human_attribute_name(:bianhao) %></div></th>
     <% @properties.each do |item| %>
-      <th><%= item.name %></th> 
+      <th><div style="width:<%= item.width %>"><%= item.name %></div></th> 
     <% end %>
     <th><%= CAsset.human_attribute_name(:updated_at) %></th>
     <th><%= CAsset.human_attribute_name(:last_update_user) %></th>
@@ -16,7 +16,7 @@
     <% @properties.each do |item| %>
       <td><%=get_value(c_asset.asset_property_values.detect{|em| em.property_id == item.id },item) %></td> 
     <% end %> 
-    <td><%= c_asset.updated_at.strftime("%F") %></td>
+    <td><div style='width:80px'><%= c_asset.updated_at.strftime("%F") %></div></td>
     <td><%= c_asset.last_update_user %></td>
     <td><%= link_to 'Show', c_asset %></td>
     <td><%= link_to 'Edit', edit_c_asset_path(c_asset) %></td>

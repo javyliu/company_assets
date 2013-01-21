@@ -229,6 +229,7 @@ zh-CN:
       property:
         name: "属性名称"
         style: "属性类型"
+        width: "展示宽度"
       check_option:
         item_name: "选项名称" 
       c_asset:

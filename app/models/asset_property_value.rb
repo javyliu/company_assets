@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: asset_property_values
+#
+#  id          :integer          not null, primary key
+#  property_id :integer
+#  c_asset_id  :integer
+#  str_value   :string(255)
+#  int_value   :integer
+#
+
 class AssetPropertyValue < ActiveRecord::Base
   default_scope order("property_id")
   belongs_to :property

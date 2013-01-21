@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: asset_property_values
+#
+#  id          :integer          not null, primary key
+#  property_id :integer
+#  c_asset_id  :integer
+#  str_value   :string(255)
+#  int_value   :integer
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:

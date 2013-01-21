@@ -1,3 +1,11 @@
+# == Schema Information
+#
+# Table name: asset_categories
+#
+#  id   :integer          not null, primary key
+#  name :string(255)
+#
+
 class AssetCategory < ActiveRecord::Base
   attr_accessible :name,:category_property_ids
   has_many :category_properties,:dependent => :delete_all

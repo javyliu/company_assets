@@ -1,3 +1,12 @@
+# == Schema Information
+#
+# Table name: category_properties
+#
+#  id                :integer          not null, primary key
+#  asset_category_id :integer
+#  property_id       :integer
+#
+
 class CategoryProperty < ActiveRecord::Base
   belongs_to :asset_category
   belongs_to :property

@@ -19,6 +19,10 @@
     <%= f.label :style %><br />
     <%= f.select :style,Property::Style %>
   </div>
+  <div class="field">
+    <%= f.label :style %><br />
+	<%= f.text_field :width %><em>默认为200px</em>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
