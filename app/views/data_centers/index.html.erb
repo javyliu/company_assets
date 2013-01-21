@@ -21,20 +21,20 @@
 
 <% @data_centers.each do |data_center| %>
   <tr>
-    <td><%= data_center.name %></td>
-    <td><%= data_center.contract_no %></td>
-    <td><%= data_center.kefu_tel %></td>
-    <td><%= data_center.other_contact %></td>
-    <td><%= data_center.ems_address %></td>
-    <td><%= data_center.map %></td>
-    <td><%= data_center.device_no %></td>
-    <td><%= data_center.space %></td>
-    <td><%= data_center.bandwidth %></td>
-    <td><%= data_center.port_num %></td>
-    <td><%= data_center.ip %></td>
-    <td><%= data_center.exchange_device %></td>
-    <td><%= data_center.fee %></td>
-    <td><%= data_center.remark %></td>
+    <td><%= simple_format data_center.name %></td>
+    <td><%= simple_format data_center.contract_no %></td>
+    <td><%= simple_format data_center.kefu_tel %></td>
+    <td><%= simple_format data_center.other_contact %></td>
+    <td><%= simple_format data_center.ems_address %></td>
+    <td><%= simple_format data_center.map %></td>
+    <td><%= simple_format data_center.device_no %></td>
+    <td><%= simple_format data_center.space %></td>
+    <td><%= simple_format data_center.bandwidth %></td>
+    <td><%= simple_format data_center.port_num %></td>
+    <td><%= simple_format data_center.ip %></td>
+    <td><%= simple_format data_center.exchange_device %></td>
+    <td><%= simple_format data_center.fee %></td>
+    <td><%= simple_format data_center.remark %></td>
 <td>
     <%= link_to 'Show', data_center %>
     <%= link_to 'Edit', edit_data_center_path(data_center) %>
