@@ -22,7 +22,7 @@ class Property < ActiveRecord::Base
   private
 
   def set_attrubute
-    unless self.width.end_with("%","px")
+    unless self.width.end_with?("%","px")
       self.width = self.width.scan(/\d+/)+"px"
     end 
   end
